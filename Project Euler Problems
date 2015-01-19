@@ -1,0 +1,311 @@
+#problem1
+i = 1
+lst = []
+while i < 1000:
+	if ((i%5 == 0) or (1%3 == 0)):
+		lst.append(i)
+	i = i + 1
+sum(lst)
+
+#problem2
+t1 = 1
+t2 = 2
+temp = 0
+loopVar = True
+elemList = []
+evenlst = []
+evenlst.append(2)
+while loopVar:
+    t3 = t2 + t1
+    if t3 > 4000000:
+        break
+    else:
+        elemList.append(t3)
+        temp = t2
+        t2 = t3
+        t1 = temp
+for i in elemList:
+    if (i%2) == 0:
+        evenlst.append(i)
+sum(evenlst)
+
+#problem3 --> Not done
+factorList = []
+primeFactorOfFactorList = []
+i = 2
+while i < 13195:
+    if (13195%i == 0):
+        factorList.append(i)
+    i = i + 1
+#print factorList
+for i in factorList:
+    j = 2
+    factorOfFactorList = []
+    while j < i:
+        if (i%j == 0):
+            factorOfFactorList.append(j)
+if (len(factorOfFactorList) == 1):
+    primeFactorOfFactorList.append
+
+#problem4
+def isPalindrome(x):
+    y = int(str(x)[::-1])
+    if (x == y):
+        return 1
+    else:
+        return 0
+
+def solution():
+    palindromeList = []
+    for i in range(1000):
+        for j in range(1000):
+            k = i * j
+            if (isPalindrome(k)):
+                palindromeList.append(k)
+    return max(palindromeList)
+
+#problem5
+def isDivBy1To20(x):
+    n = 0
+    i = 1
+    for i in range(1,21):
+        if (x%i == 0):
+            n = n + 1
+    if (n == 20):
+        return 1
+    else:
+        return 0
+
+def solution():
+    a = 1
+    while a > 0:
+        if (isDivBy1To20(a)):
+            break
+        else:
+            a = a + 1
+    print a
+
+#problem6
+def sumOfSquares():
+    squaresList = []
+    for i in range(1,101):
+        squaresList.append(pow(i,2))
+    return sum(squaresList)
+
+def squareOfSum():
+    numberList = []
+    for i in range(1,101):
+        numberList.append(i)
+    return pow(sum(numberList), 2)
+
+def solution():
+    a = sumOfSquares()
+    b = squareOfSum()
+    return (b - a)
+
+#problem7
+def isPrime(x):
+    divisorList = []
+    for i in range(1, x+1):
+        if (x%i == 0):
+            divisorList.append(i)
+    if (len(divisorList) == 2):
+        return 1
+    else:
+        return 0
+
+def solution():
+    a = 1
+    n = 0
+    while i > 1:
+        if (isPrime(a)):
+            n = n + 1
+            a = a + 1
+        else:
+            a = a + 1
+        if n == 6:
+            break
+    return (a-1)
+
+#problem8
+def isSum1000(a, b, c):
+    if (a+b+c == 1000):
+        return 1
+    else:
+        return 0
+
+def isPythogareanTriplet(x, y, z):
+    if ((pow(x,2) + pow(y,2)) == pow(z,2)):
+        return 1
+    else:
+        return 0
+
+def solution():
+    m = 0
+    for i in range(1, 1001):
+        for j in range(1, 1001):
+            k = 1000 - i - j
+            if ((k > 0) and (isPythogareanTriplet(i, j, k))):
+                m = 1
+                break
+            else:
+                m = 0
+        if m == 1:
+            break
+    print (i * j * k)
+
+#problem10
+def isPrime(x):
+    divisorList = []
+    for i in range(1, x+1):
+        if (x%i == 0):
+            divisorList.append(i)
+    if (len(divisorList) == 2):
+        return 1
+    else:
+        return 0
+
+def solution():
+    primeList = []
+    for i in range(1, 2000000 + 1):
+        if (isPrime(i)):
+            primeList.append(i)
+    print sum(primeList)
+
+#problem12
+def factorList(a):
+    listOfFactors = []
+    for i in range(1, a+1):
+        if (a%i == 0):
+            listOfFactors.append(i)
+    return listOfFactors
+
+def solution():
+    t1 = 1
+    var = True
+    while (var):
+        numberToAdd = t1 + 1
+        t2 = t1 + numberToAdd
+        print t2
+        t1 = t2
+
+#problem14
+def evenCase(a):
+    return (a/2)
+
+def oddCase(b):
+    return ((3 * b) + 1)
+
+def trySol():
+    #for i in range(1, 1000000 + 1):
+    i = 13
+    list = []
+    list.append(i)
+        while (list[-1] != 1):
+            var = i
+            if (var%2 == 0):
+                list.append(evenCase(var))
+            else:
+                list.append(oddCase(var))
+            var = list[-1]
+
+
+
+
+def solution():
+    for i in range(1, 1000000 + 1):
+        list = []
+        while (list[-1] != 1):
+            list.append(i)
+            var = i
+            if (var%2 == 0):
+                list.append(evenCase(var))
+            else:
+                list.append(oddCase(var))
+            var = list[-1]
+
+#problem16
+def changeNumberToList(a):
+    numberList = []
+    b = str(a)
+    for i in range(len(b)):
+        numberList.append(int(b[i]))
+    return numberList
+
+def solution():
+    x = pow(2, 1000)
+    list = changeNumberToList(x)
+    print sum(list)
+
+#problem47
+def getFactorList(x):
+    factList = []
+    for j in range(1, x+1):
+        if (j%i == 0):
+            factList.append(i)
+    return factList
+
+def getPrimeFactorList(y):
+    primeFactorList = []
+    for i in y:
+        if (isPrime(i)):
+            primeFactorList.append(i)
+    return getPrimeFactorList
+
+
+def isPrime(a):
+    factorList = []
+    for i in range(1, a+1):
+        if (a%i == 0):
+            factorList.append(i)
+    if (len(factorList) == 2):
+        return 1
+    else:
+        return 0
+
+def solution():
+    var = True
+    n1 = 1
+    while var:
+        n2 = n1 + 1
+        n3 + n1 + 2
+        n4 = n1 + 3
+        n1FactList =
+
+#problem46
+def isOdd(a):
+    if(a%2 == 0):
+        return 0
+    else:
+        return 1
+
+def isPrime(b):
+    factorList = []
+    for i in range(1, b+1):
+        if(b%i == 0):
+            factor.append(i)
+    if(len(factorList) == 2):
+        return 1
+    else
+        return 0
+
+def solution():
+    n = 1
+    var = True
+    while (var):
+        if(isOdd(n) and !(isPrime(n))):
+
+
+#problem48
+def solution():
+    ans = 0
+    for i in range(1,1001):
+        ans = ans + pow(i,i)
+    ansStr = str(ans)
+    for i in range(len(ansStr)-10,len(ansStr)):
+            print ansStr[i]
+
+
+
+
+
